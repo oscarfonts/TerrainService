@@ -18,8 +18,8 @@ router.get('/point/:x/:y', function (req, res) {
   res.send(point.toJSON());
 });
 
-router.use('/layer', bodyParser.raw());
-router.use('/layer', bodyParser.raw({type: "application/json"}));
+router.use('/layer', bodyParser.raw({limit: '50mb'}));
+router.use('/layer', bodyParser.raw({type: "application/json", limit: '50mb'}));
 
 router.post('/layer', function (req, res) {
   var fork = require('child_process').fork;
@@ -28,7 +28,7 @@ router.post('/layer', function (req, res) {
   child.stdin.end(req.body);
 
   child.stdout.on('data', function(data) {
-    res.send(JSON.parse(data));
+    res.write(data);
   });
 
   child.stdout.on('end', function() {
