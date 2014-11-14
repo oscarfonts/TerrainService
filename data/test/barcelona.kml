@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Barcelona Free Walking Tour</name>
+		<description><![CDATA[An English speaking walking tour around the Barri Gothic with the TRAVEL BOUND travel group...
+
+Experience the magic and mystery of Barcelona´s historic roots, Informative and entertaining. Discover the hidden beauty of Catalunya´s largest most controversial city.
+
+Let us take you on a two hour tour through Barcelon´s old city including: The Barri Gothic Roman remains Picasso´s absinthe bar, the former red light district, and the world famous Rambla 
+
+http://www.travelbar.com/es/adventure-weekends/walking_tour.php]]></description>
+		<Folder>
+			<name>Capa sin nombre</name>
+			<Placemark>
+				<styleUrl>#icon-22</styleUrl>
+				<name>Travelbar</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://media.salir-static.net/_images_/verticales/4/7/f/c/2901-travel_bar_pv.jpg/vm5tgq</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[C/ Boqueria, 27
+08002 Barcelona
+933 425 252
+travelbar.com‎ (http://maps.google.es/local_url?q=http://www.travelbar.com/&dq=travel+bar+barcelona&f=q&source=s_q&output=js&hl=es&geocode=&abauth=4ce28d88bRRJofz11jUZ64vrMGjNSX077gc&vps=1&jsv=295c&sll=40.396764,-3.713379&sspn=10.170438,26.784668&oi=miw&sa=X&ct=miw_link&cd=1&cad=homepage,cid:6429941158345498634&ei=kY3iTNvXJd6cOOWgnLAB&s=ANYYN7neYaEWeSsmmz5JZT--uuxBs2ynAw)]]></description>
+				<Point>
+					<coordinates>2.174451,41.381586,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Marca de posición 2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[Placa behind Travel bar
+
+introductions]]></description>
+				<Point>
+					<coordinates>2.174343,41.381798,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Las Ramblas</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://farm4.static.flickr.com/3474/3231392715_db9d494c9f.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The Miro ground mural, tourist central.
+
+
+
+The line of the Rambla follows one of the old city rivers within which the old city was built in, the Cagallel (the turd bearer), the other also being a poo named river, the Merdanca (the shit stream). In the 13th Century, Jaume 1 built a wall to enclose the Gothic city, The rambla was zone outside the exterior wall.]]></description>
+				<Point>
+					<coordinates>2.173268,41.38117,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Plaça de Sant Felip Neri</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://mw2.google.com/mw-panoramio/photos/small/582589.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[One of the cities most beautiful squares, site of childrens schools
+
+
+
+Bombed by Hitler during Spanish civil war, later used as zone of execution of anti fascists when Franco won the war.]]></description>
+				<Point>
+					<coordinates>2.175094,41.383402,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>El Call, the Jewish Ghetto</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.travel-watch.com/images/barcelona.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[One of the narrowest streets in the city. In the old days people would have crossed from roof to roof, as the Jewish community was closed off from the rest of the city. Europes oldest synagogue is housed here.
+
+
+
+The Jews have had a terrible time in most places, including Barcelona. In the 1300´s they were blamed for the Black death and there were pogroms. In 1492 they were finally exiled from the city.]]></description>
+				<Point>
+					<coordinates>2.175572,41.382786,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Placa Nova</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[Outside the old Roman North gate, 1 of 4 leading from the old Roman city. You can see the last bit of the aquaduct.]]></description>
+				<Point>
+					<coordinates>2.175266,41.384078,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Hairy Willy</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.barcelona-tourist-information.info/images/wilfreddragon.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The stories of the "Father of Catalunya", St George and the Dragon and the Kings Jewish wall.]]></description>
+				<Point>
+					<coordinates>2.176918,41.384118,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Old gardens of the King</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[Now housing the Crown of Aragon archives, a wonderful example of a cool interior space.]]></description>
+				<Point>
+					<coordinates>2.177168,41.384037,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>The Kings steps - Placa del Rei</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://mw2.google.com/mw-panoramio/photos/small/16245102.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[Another gem of a square in the Gothic quarter. This is where Colombus reported back that there was a New World
+
+
+
+In the evenings you can see people sitting out on the steps, sharing beer or playing music. Quiet often there are Catalan dancing evenings and free city concerts here.]]></description>
+				<Point>
+					<coordinates>2.17739,41.384168,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Roman Barcelona</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://sobreespana.com/wp-content/uploads/2008/12/museo-de-historia.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[You can view down through the windows of the city history museum, to see the amazing ruins of the Roman city, 5 metres below the present level.]]></description>
+				<Point>
+					<coordinates>2.177586,41.383967,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Cathedral gargolyes and the Senyera</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://farm4.static.flickr.com/3290/2729137842_d814468c47.jpg?v=0</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The Cities Cahedral, like many other Gothic buildings, has gargoyles (demons to warn away evil spirits, that double up as excess rain water run offs) but in this case they are of farmyard animals
+
+
+
+Alongside we will see 1 of the many Senyera, the Catalan flag. We will hear of its origins and a little more about Catalan identity and life, like their dislike of bull fighting and their love of human tower building.]]></description>
+				<Point>
+					<coordinates>2.176749,41.383615000000006,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Baixada de Santa Eulalia</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://1.bp.blogspot.com/_bFFjCDvr2EY/S3VTuozH1HI/AAAAAAAAO-k/n-gfCav0UMc/s400/Baixada_de_Santa_Eul%C3%A0lia.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[A quick stop to hear the story of the Cities Patron Saint, a 13 year old girl called Eulalia.]]></description>
+				<Point>
+					<coordinates>2.175121,41.382906,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Europes oldest synagogue</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.calldebarcelona.org/imatges/exterior2.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[View this site of much history at Carrer de Marlet, 5. More info about the history of Barcelona's Jewish community at www.calldebarcelona.org (http://www.calldebarcelona.org/eindex.html)]]></description>
+				<Point>
+					<coordinates>2.175883,41.382613,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>City Architecture School - Picassos Miro joke </name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://farm3.static.flickr.com/2553/3794801626_d8903dee8c.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[A funny story for an ugly building.]]></description>
+				<Point>
+					<coordinates>2.175057,41.384440000000005,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Santa Catarina market</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.thecityreview.com/spain2.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[A bold colorful architecture, a retrofit of a local food market, of which each barrio still has their own, serving local fresh fruit and vegetables.]]></description>
+				<Point>
+					<coordinates>2.178072,41.38634,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-22</styleUrl>
+				<name>La Bougaria</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>2.172182,41.382154,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>la boqueria market</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://farm3.static.flickr.com/2501/3883252857_b5bfb6cba1.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[A wonderful food market in the heart of the city. Go in and see the sights, hear the sounds, smell the food, taste the richness.]]></description>
+				<Point>
+					<coordinates>2.172133,41.382098000000006,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Raval</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.denuncia-social.com/wp-content/uploads/2009/02/putas_el_raval.gif</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The part of the city known once as Barri Xino (the chinese neighbourhood). Its the most multicultural part of the city and has much hidden gems, it still is a bit rough, with pimps, druggies and whores hanging out. Go explore, but be careful.]]></description>
+				<Point>
+					<coordinates>2.168598,41.379304,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Barcelona Cathedral</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://images.travelpod.com/users/jonbunston/1.1224688440.geese-barcelona-cathedral.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The 14th Century cathedral dedicated to Santa Eulalia, still has an internal cloister garden within which there are always 13 white geese, 1 to sybolise each year of the life of the saint.]]></description>
+				<Point>
+					<coordinates>2.176162,41.384311,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Roman Forum</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://images.travelpod.com/users/isaacfitz/europe-2007.1192263600.roman-ruins.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[The peak of mount Tabor, behind an old door, old remnants of the Roman city can be viewed.]]></description>
+				<Point>
+					<coordinates>2.177246,41.38344000000001,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Placa de San Jaume</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://sisolomusica.blogia.com/upload/20060720235713-498245.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[This is the centre of power, hasnt moved far in 2000 years. The ayutamento stands on the sea side and facing it is the Generalitat, or centre of power for the state of Catalunya. The square sees a lot of protests, as Catalans do like to make themselves heard.]]></description>
+				<Point>
+					<coordinates>2.176929,41.382671,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Square with kids playground</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.deliciousbaby.com/static/content/journal/site/2008/lead/tn-barcelona_playground-550x450-rd10.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[After democracy was restored, one of the first acts of urbanism, was to open up spaces for the public to congregate again. This is one of the few in the Barri Gothic, but in it you can see how well used kids zones are here. Kids are valued in Spain and it is normal to see fathers after work rolling around on the ground with their kids, which is seen to less of an extent in the colder northern countries.]]></description>
+				<Point>
+					<coordinates>2.177321,41.381739,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-61</styleUrl>
+				<name>Travel Bound</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.travelbar.com/uk/img/banner/logo.gif</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[Carrer de Milans, 7
+08002 Barcelona
+
+Cómo llegar (http://maps.google.es/maps/ms?hl=es&gl=es&ie=UTF8&oe=UTF8&msa=0&msid=116723910549637752730.0004952bdceb35a1f90dc)
+933 191 662
+http://www.travelbar.com/uk/ (../local_url?q=http://www.tbtravelbound.com/&dq=Travelbound&ftid=11243412823682796525&lyr=h%40137&iwp=maps_app&gl=es&hl=es&view=smartmaps&sll=41.380701,2.179075&ei=MariTISFFaDNjAf_q63GAg&callback=_xdc_._84ggkyx6ea&oi=miw&sa=X&ct=miw_link&cd=1&cad=homepage,cid:11243412823682796525&s=ANYYN7kCQAAjgOMCj3m6wcsV6M4vY_NY7A)
+
+
+
+
+Zona de servicio:  - 
+Categoría: 
+
+Empresa no verificada]]></description>
+				<Point>
+					<coordinates>2.179134,41.380657,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Picassos art school</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://4.bp.blogspot.com/_Zy5ieQ7uGMY/SwRJQJOhD3I/AAAAAAAACBs/oFrVhL6nRUw/s1600/picasso_avignon%5B1%5D_jpg.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[Las señoritas de Avinyó
+
+Remember that famous Cubist painting by Picasso, come here and find out the full story...]]></description>
+				<Point>
+					<coordinates>2.177361,41.380908,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-157</styleUrl>
+				<name>Placa George Orwell</name>
+				<ExtendedData>
+					<Data name='gx_media_links'>
+						<value>http://www.nerdcore.de/wp/wp-content/uploads/2010/04/orwell.jpg</value>
+					</Data>
+				</ExtendedData>
+				<description><![CDATA[George Orwell was a famous British author who came to fight against facism during the Spanish civil war. He got shot and this triangular square was named after him. Its more locally known as Placa Tripi, as its where all the drug dealing used happen. Ironically enough, given Georges naming of BIG BROTHER, in his book 1984, this square was the first in the city to have security cameras installed.]]></description>
+				<Point>
+					<coordinates>2.177305,41.380476,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>walk 1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.174352,41.381788,0.0 2.174514,41.381782,0.0 2.174595,41.38158,0.0 2.173477,41.38132,0.0 2.173436,41.381439,0.0 2.173388,41.381798,0.0 2.173586,41.38224,0.0 2.173758,41.382389,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>walk 2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.17379,41.382389,0.0 2.174343,41.382349,0.0 2.174734,41.382575,0.0 2.1746,41.382804,0.0 2.175094,41.382888,0.0 2.175292,41.383045,0.0 2.175952,41.382611,0.0 2.175791,41.38255,0.0 2.175678,41.382506,0.0 2.175523,41.382414,0.0 2.175271,41.38255,0.0 2.175442,41.382957,0.0 2.175292,41.383045,0.0 2.175389,41.383138,0.0 2.17511,41.383396,0.0 2.175137,41.383561,0.0 2.175281,41.383601,0.0 2.175469,41.383625,0.0 2.175603,41.383625,0.0 2.175807,41.383746,0.0 2.175394,41.38404800000001,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>walk 3</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.175399,41.38404,0.0 2.17548,41.384233,0.0 2.175893,41.384502,0.0 2.176242,41.384458,0.0 2.176472,41.384362,0.0 2.176917,41.384092,0.0 2.177036,41.383931,0.0 2.177159,41.384032,0.0 2.177298,41.384297,0.0 2.177513,41.3841,0.0 2.177234,41.383802,0.0 2.177089,41.383838,0.0 2.176993,41.383718,0.0 2.1767670000000003,41.383613,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>Línea 4</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.176778,41.38361,0.0 2.176921,41.3836,0.0 2.177055,41.38348500000001,0.0 2.177135,41.383411,0.0 2.176875,41.383203,0.0 2.177071,41.383038,0.0 2.177028,41.382886,0.0 2.176942,41.382682,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>walk</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.17717,41.381963,0.0 2.177411,41.381532,0.0 2.17762,41.381395,0.0 2.17813,41.381637,0.0 2.178666,41.381291,0.0 2.179192,41.380956,0.0 2.179605,41.380659,0.0 2.179122,41.380618,0.0 2.178865,41.380373,0.0 2.177255,41.3809,0.0 2.177143,41.380739,0.0 2.17725,41.380473,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>walk</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.17725,41.380437,0.0 2.177025,41.380252,0.0 2.176397,41.379664,0.0 2.176038,41.37989,0.0 2.175641,41.380023,0.0 2.175013,41.380353,0.0 2.174582,41.380645,0.0 2.174782,41.380836,0.0 2.174509,41.381073,0.0 2.174359,41.381234,0.0 2.174112,41.38148,0.0 2.174477,41.381564,0.0 2.1746,41.381613,0.0 2.174504,41.381782,0.0 2.174375,41.381782,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-0000FF-5</styleUrl>
+				<name>Línea 5</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>2.176943,41.382691,0.0 2.176939,41.382499,0.0 2.176972,41.382322,0.0 2.176961,41.382155,0.0 2.177181,41.381925,0.0</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Style id='icon-157'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-22'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-61'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='line-0000FF-5'>
+			<LineStyle>
+				<color>ffFF0000</color>
+				<width>5</width>
+			</LineStyle>
+		</Style>
+	</Document>
+</kml>
