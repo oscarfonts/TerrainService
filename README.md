@@ -63,7 +63,7 @@ For Ubuntu systems, create an "upstart" script in "/etc/init/terrain-service.con
 Online demo
 -----------
 
-A **pretty unstable** test server *may* be available at:
+A **pretty unstable** test server *may* be running at:
 
    http://northings.geomati.co:8080
 
