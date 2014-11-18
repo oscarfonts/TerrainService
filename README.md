@@ -70,3 +70,7 @@ A **pretty unstable** test server *may* be running at:
 For instance:
 
    http://northings.geomati.co:8080/point/2.194048/41.424580
+   
+Or try POSTing a file:
+
+    curl -X POST -d @simple.geojson http://northings.geomati.co:8080/layer --header "Content-Type:application/octet-stream"
