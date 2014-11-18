@@ -6,7 +6,6 @@ var elevation = function(file) {
     var raster = gdal.open(file);
     var pixels = raster.bands.get(1).pixels;
     var size = raster.bands.get(1).size;
-    console.log(size);
     var transform = raster.geoTransform;
 
     return {

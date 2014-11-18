@@ -4,7 +4,12 @@ Terrain Service
 
 Incorporates height information (Z coordinate) to geospatial vector data, read from a Digital Elevation Model raster file.
 
-Among others, it uses node-gdal library, see https://github.com/naturalatlas/node-gdal If it doens't work, build it from source:
+Install dependencies with npm:
+
+    npm install
+
+Among others, it uses node-gdal library, see https://github.com/naturalatlas/node-gdal
+If gdal doesn't work, build it from source:
 
     sudo apt-get install gdal-bin libgdal-dev
     npm install gdal --build-from-source --shared_gdal
@@ -13,13 +18,15 @@ Among others, it uses node-gdal library, see https://github.com/naturalatlas/nod
 Setting up
 ----------
 
-Add a DEM file in GeoTIFF format and EPSG:4326 coordinate system (WGS84 lat, lon) in "data/DEM.tif".
+Add a GeoTIFF DEM file in EPSG:4326 to "data/DEM.tif". Yes, the file name *is* hardcoded.
 
 
 Running from command line
 -------------------------
 
-Run the "controllers/layer.js" script. Reads 2D input data from "stdin" and outputs 3D tata to "stdout". For example, this simple GeoJSON file:
+**NOTE: At this stage, the commandline is broken.**
+
+Run the "controllers/layer.js" script. Reads 2D input data from "stdin" and outputs the 3D data to "stdout". For example, try the provided simple GeoJSON test file:
 
     node controllers/layer.js < data/test/simple.geojson
 
@@ -28,7 +35,7 @@ Or a KML file:
     node controllers/layer.js < data/test/barcelona.kml
 
 
-Testing server on localhost
+Starting a localhost server
 ---------------------------
 
 Just run:
