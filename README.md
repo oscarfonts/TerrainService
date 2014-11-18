@@ -21,11 +21,11 @@ Running from command line
 
 Run the "controllers/layer.js" script. Reads 2D input data from "stdin" and outputs 3D tata to "stdout". For example, this simple GeoJSON file:
 
-    $ node controllers/layer.js < data/test/simple.geojson
+    node controllers/layer.js < data/test/simple.geojson
 
 Or a KML file:
 
-    $ node controllers/layer.js < data/test/barcelona.kml
+    node controllers/layer.js < data/test/barcelona.kml
 
 
 Testing server on localhost
@@ -33,15 +33,15 @@ Testing server on localhost
 
 Just run:
 
-    $ node bin/www
+    node bin/www
 
 And access it on port 3000. To get a point's height:
 
-    http://localhost:3000/point/2.194048/41.424580
+   http://localhost:3000/point/2.194048/41.424580
 
 To process a whole file, send it by POST using the Content Type header "application/octet-stream". For example, using CURL:
 
-    $ curl -X POST -d @simple.geojson http://localhost:3000/layer --header "Content-Type:application/octet-stream"
+    curl -X POST -d @simple.geojson http://localhost:3000/layer --header "Content-Type:application/octet-stream"
 
 
 Installing as a service
@@ -49,7 +49,7 @@ Installing as a service
 
 For Ubuntu systems, create an "upstart" script in "/etc/init/terrain-service.conf". Use the sample file at "upstart_script_sample/terrain-service.conf". Then run:
 
-    $ sudo service terrain-service [start|stop|restart]
+    sudo service terrain-service [start|stop|restart]
 
 
 
@@ -58,8 +58,8 @@ Online demo
 
 A **pretty unstable** test server *may* be available at:
 
-    http://northings.geomati.co:8080
+   http://northings.geomati.co:8080
 
 For instance:
 
-    http://northings.geomati.co:8080/point/2.194048/41.424580
+   http://northings.geomati.co:8080/point/2.194048/41.424580
