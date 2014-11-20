@@ -24,36 +24,15 @@ router.get('/point/:x/:y', function(req, res) {
 });
 
 /* Layer service */
-
-// TODO use a raw bodyParser for *any* contentType, *and* propagate the content type header to the response.
-router.use('/layer', bodyParser.raw({
-    limit: '50mb'
-}));
-router.use('/layer', bodyParser.raw({
-    type: 'application/json',
-    limit: '50mb'
-}));
-
 router.post('/layer', function(req, res) {
     var fork = require('child_process').fork;
     var child = fork(path.join(__dirname, '../gdal_elevate'), [], {
         silent: true
     });
 
-    // TODO try to convert this to pipes
-    child.stdin.end(req.body);
-
-    child.stdout.on('data', function(data) {
-        res.write(data);
-    });
-
-    child.stdout.on('end', function() {
-        res.end();
-    });
-
-    child.stderr.on('data', function(data) {
-        process.stderr.write(data);
-    });
+    req.pipe(child.stdin);
+    child.stdout.pipe(res);
+    child.sterr.pipe(process.stderr);
 
 });
 
