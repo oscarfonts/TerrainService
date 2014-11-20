@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+'use strict';
+
+// TODO Add CLI params for DEM file, and, optionaly, input and output vector files, plus an usage note.
+// require.main === module says if file was called from command line or not.
+
+var dem = require('./elevation');
+var elevate = dem('../data/DEM.tif');
+
+elevate.layer();

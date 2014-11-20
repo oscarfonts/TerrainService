@@ -2,45 +2,61 @@
 Terrain Service
 ===============
 
-Incorporates height information (Z coordinate) to geospatial vector data, read from a Digital Elevation Model raster file.
+Incorporates height information (a Z coordinate) to geospatial vector data, reading it from a Digital Elevation Model raster file.
 
-Install dependencies with npm:
+Based on node gdal bindings (see https://github.com/naturalatlas/node-gdal).
 
+Includes both a node.js command-line utility called "gdal_elevate", and an express application that publishes the same functionality as a web service.
+
+
+Installation
+------------
+
+Instructions for Ubuntu, your mileage may vary.
+
+Install latest node.js:
+
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    sudo apt-get install -y nodejs
+    apt-get install nodejs
+
+Clone this repo:
+
+    git clone git@github.com:geomatico/TerrainService.git
+
+Install its dependencies with npm:
+
+    cd src
     npm install
 
-Among others, it uses node-gdal library, see https://github.com/naturalatlas/node-gdal
-If gdal doesn't work, build it from source:
+If node-gdal doesn't work, build it from source:
 
     sudo apt-get install gdal-bin libgdal-dev
     npm install gdal --build-from-source --shared_gdal
 
 
-Setting up
-----------
+Setup
+-----
 
-Add a GeoTIFF DEM file in EPSG:4326 to "data/DEM.tif". Yes, the file name *is* hardcoded.
-
-
-Running from command line
--------------------------
-
-**NOTE: At this stage, the commandline is broken.**
-
-Run the "controllers/layer.js" script. Reads 2D input data from "stdin" and outputs the 3D data to "stdout". For example, try the provided simple GeoJSON test file:
-
-    node controllers/layer.js < data/test/simple.geojson
-
-Or a KML file:
-
-    node controllers/layer.js < data/test/barcelona.kml
+Add a GeoTIFF DEM file in EPSG:4326 to "data/DEM.tif". Yes, the file name *is* hardcoded at this time.
+No reprojection is performed, so it is assumed that DEM will be in the same CRS than vector files.
 
 
-Starting a localhost server
----------------------------
+Run from command line
+---------------------
+
+Run the "gdal_elevate" script. Reads 2D input data from "stdin", and outputs the 3D data to "stdout". For example, try the provided test files:
+
+    gdal_elevate < data/test/simple.geojson
+    gdal_elevate < data/test/barcelona.kml
+
+
+Run as a web service
+--------------------
 
 Just run:
 
-    node bin/www
+    web/server
 
 And access it on port 3000. To get a point's height:
 
@@ -48,13 +64,14 @@ And access it on port 3000. To get a point's height:
 
 To process a whole file, send it by POST using the Content Type header "application/octet-stream". For example, using CURL:
 
-    curl -X POST -d @simple.geojson http://localhost:3000/layer --header "Content-Type:application/octet-stream"
+    curl http://localhost:3000/layer -X POST --header "Content-Type:application/octet-stream" -d @../data/test/simple.geojson
 
 
-Installing as a service
------------------------
+Run the web server permanently
+------------------------------
 
-For Ubuntu systems, create an "upstart" script in "/etc/init/terrain-service.conf". Use the sample file at "upstart_script_sample/terrain-service.conf". Then run:
+For Ubuntu systems, create an "upstart" script in "/etc/init/terrain-service.conf". Use the sample file at "doc/upstart_script_sample/terrain-service.conf".
+Then run:
 
     sudo service terrain-service [start|stop|restart]
 
@@ -73,4 +90,4 @@ For instance:
    
 Or try POSTing a file:
 
-    curl -X POST -d @simple.geojson http://northings.geomati.co:8080/layer --header "Content-Type:application/octet-stream"
+    curl http://northings.geomati.co:8080/layer -X POST --header "Content-Type:application/octet-stream" -d @../data/test/simple.geojson
