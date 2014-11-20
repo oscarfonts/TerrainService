@@ -7,7 +7,7 @@ var logger = require('morgan');
 var app = express();
 
 // Templates
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'jade');
 
 // Logs
