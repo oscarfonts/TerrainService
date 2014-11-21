@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
-var elevation = require('../elevation');
+var elevation = require('../gdal_elevate');
 var demFile = path.join(__dirname, '../../data/DEM.tif');
 var elevate = elevation(demFile);
 
@@ -24,16 +24,23 @@ router.get('/point/:x/:y', function(req, res) {
 });
 
 /* Layer service */
-router.post('/layer', function(req, res) {
+router.post('/layer', function(req, res, next) {
     var fork = require('child_process').fork;
-    var child = fork(path.join(__dirname, '../gdal_elevate'), [], {
+    var child = fork(path.join(__dirname, '../gdal_elevate'), [demFile], {
         silent: true
     });
 
     req.pipe(child.stdin);
     child.stdout.pipe(res);
-    child.sterr.pipe(process.stderr);
 
+    var error_message = "";
+    child.stderr.on('data', function(data) {
+        child.stdout.unpipe(res);
+        error_message += data.toString();
+    });
+    child.stderr.on('end', function() {
+        next(new Error(error_message));
+    });
 });
 
 module.exports = router;
