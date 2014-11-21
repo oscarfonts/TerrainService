@@ -10,13 +10,6 @@ var elevate = elevation(config.demFile);
 
 var router = express.Router();
 
-/* Home page */
-router.get('/', function(req, res) {
-    res.render('index', {
-        title: 'Express'
-    });
-});
-
 /* Point service */
 router.get('/point/:x/:y', function(req, res) {
     var x = parseFloat(req.params.x);

@@ -1,0 +1,48 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+h1, h2 {
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+h1 {
+    margin-left: 50%;
+}
+#map, #log-container, #chart {
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    padding: 8px;
+    border: 10px solid white;
+}
+#map {
+    float: left;
+}
+#log-container {
+    border-left: 0;
+    background-color: #F0F0F0;
+    float: left;
+    height: 100%;
+    padding-top: 60px;
+    overflow-y: scroll;
+}
+#chart {
+    top: 50%;
+    background-color: #F0F0FF;
+    border-top: 0;
+    height: 50%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 0.2em #D0D0FF, 0 0 0.2em #D0D0FF, 0 0 0.2em #D0D0FF;
+    font-size: 48px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
