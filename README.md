@@ -1,4 +1,3 @@
-
 Terrain Service
 ===============
 
@@ -36,7 +35,7 @@ If node-gdal doesn't work, build it from source:
     sudo apt-get install gdal-bin libgdal-dev
     npm install gdal --build-from-source --shared_gdal
 
-Finally, edit the "web/config.js" file, to point to your raster DEM file.
+Finally, edit the "web/config.js" file, to point to your DEM file.
 
 
 Running from command line
@@ -44,13 +43,13 @@ Running from command line
 
 Run the "gdal_elevate" script. Reads 2D input data (from a file or "stdin"), and outputs the 3D data (to a file or "stdout"). For example, try with the provided test files:
 
-    gdal_elevate ../data/DEM.tif ../data/test/sample.geojson
-    gdal_elevate ../data/DEM.tif ../data/test/sample.kml
+    ./gdal_elevate ../data/DEM.tif ../data/test/simple.geojson
+    ./gdal_elevate ../data/DEM.tif ../data/test/barcelona.kml
 
 
 For an usage message, run without parameters:
 
-    gdal_elevate
+    ./gdal_elevate
 
 
 Running as a web service
@@ -75,7 +74,6 @@ Then run:
     sudo service terrain-service [start|stop|restart]
 
 
-
 Online demo
 -----------
 
@@ -90,3 +88,11 @@ For instance:
 Or try POSTing a file:
 
     curl http://northings.geomati.co:8080/layer -X POST -d @../data/test/simple.geojson
+
+
+Credits
+-------
+
+Sample DEM data downloaded from:
+http://www.ign.es/wcs/mdt?service=WCS&request=GetCapabilities
+(c) Instituto Geográfico Nacional de España
