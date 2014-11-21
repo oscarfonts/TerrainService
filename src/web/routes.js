@@ -2,12 +2,13 @@
 
 var path = require('path');
 var express = require('express');
-var router = express.Router();
 var bodyParser = require('body-parser');
 
+var config = require('./config');
 var elevation = require('../gdal_elevate');
-var demFile = path.join(__dirname, '../../data/DEM.tif');
-var elevate = elevation(demFile);
+var elevate = elevation(config.demFile);
+
+var router = express.Router();
 
 /* Home page */
 router.get('/', function(req, res) {
@@ -26,7 +27,7 @@ router.get('/point/:x/:y', function(req, res) {
 /* Layer service */
 router.post('/layer', function(req, res, next) {
     var fork = require('child_process').fork;
-    var child = fork(path.join(__dirname, '../gdal_elevate'), [demFile], {
+    var child = fork(path.join(__dirname, '../gdal_elevate'), [config.demFile], {
         silent: true
     });
 
