@@ -2,9 +2,12 @@
     "name": "TerrainService",
     "version": "0.0.1",
     "private": true,
+    "url": "http://github.com/geomatico/TerrainService",
+    "main": "gdal_elevate",
     "scripts": {
-        "start": "node ./web/server.js"
+        "start": "web/server"
     },
+    "readmeFilename": "../README.md",
     "dependencies": {
         "body-parser": "~1.8.1",
         "debug": "~2.0.0",
