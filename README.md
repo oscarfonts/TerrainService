@@ -17,12 +17,15 @@ Tested on Ubuntu 14.04.
 
 Install latest node.js:
 
+    sudo apt-get install curl
     curl -sL https://deb.nodesource.com/setup | sudo bash -
-    sudo apt-get install -y nodejs
-    apt-get install nodejs
+    sudo apt-get install nodejs
+    node -v
+    npm -v
 
 Clone this repo:
 
+    sudo apt-get install git
     git clone git@github.com:geomatico/TerrainService.git
 
 Install its dependencies with npm:
@@ -30,12 +33,12 @@ Install its dependencies with npm:
     cd src
     npm install
 
-If node-gdal doesn't work, build it from source:
+Test it. If gdal fails to open your files, install gdal at system level, and build the bindings from source:
 
     sudo apt-get install gdal-bin libgdal-dev
     npm install gdal --build-from-source --shared_gdal
 
-Finally, edit the "web/config.js" file, to point to your DEM file.
+Finally, in case you want to run the web service, edit the "web/config.js" file to set to your DEM file location.
 
 
 Running from command line
@@ -50,6 +53,36 @@ Run the "gdal_elevate" script. Reads 2D input data (from a file or "stdin"), and
 For an usage message, run without parameters:
 
     ./gdal_elevate
+
+
+Using it as a Node.js module
+----------------------------
+
+Just require the module and init with a DEM file:
+
+    var gdal_elevate = require(',/gdal_elevate');
+    var el = gdal_elevate('../data/DEM.tif');
+
+The simplest method will return a height value given a coordinate pair:
+
+    var height = el.z(2.194048, 41.424580);
+    console.log(height);
+
+In case the elevation is not found (point out of DEM domain), a NaN will be returned.
+
+The most general method will return a 3D file from a 2D file:
+
+    el.layer('../data/test/simple.geojson'); //  Second param not set => outputs to stdout
+
+As seen case input or output files are not set, the process will read from stdin and write to stdout, respectively.
+
+A method to transform a particular GDAL geometry is also avaliable:
+
+    var gdal = require('gdal');
+
+    var geom_2d = gdal.Geometry.fromWKT("POINT(2.194048 41.424580)");
+    var geom_3d = el.geometry(geom_2d);
+    console.log(geom_3d.toWKT());
 
 
 Running as a web service
