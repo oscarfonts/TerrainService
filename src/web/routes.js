@@ -10,14 +10,14 @@ var elevate = elevation(config.demFile);
 
 var router = express.Router();
 
-/* Point service */
+/* Point */
 router.get('/point/:x/:y', function(req, res) {
     var x = parseFloat(req.params.x);
     var y = parseFloat(req.params.y);
     res.send(elevate.z(x, y).toString());
 });
 
-/* Layer service */
+/* Layer */
 router.post('/layer', function(req, res, next) {
     var fork = require('child_process').fork;
     var child = fork(path.join(__dirname, '../gdal_elevate'), [config.demFile], {
@@ -35,6 +35,12 @@ router.post('/layer', function(req, res, next) {
     child.stderr.on('end', function() {
         next(new Error(error_message));
     });
+});
+
+/* Extent */
+router.get('/extent', function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(elevate.extent().toJSON());
 });
 
 module.exports = router;

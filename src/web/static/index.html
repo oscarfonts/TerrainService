@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Terrain Service Demo Page</title>
+    <title>Terrain Service Demo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <h1>Terrain Service Demo Page</h1>
-    <h2>~ Draw a Line or Point ~</h2>
+    <h1>Terrain Service Demo Log</h1>
+    <h2>Draw a Line or Point to ~elevate~</h2>
     <div id="map"></div>
     <div id="chart">
         <p>Profile Chart
@@ -27,15 +27,94 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
     <script src="//calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
     <script>
-    var map = L.map('map').setView([41.382612, 2.177039], 10);
+    L.Util.ajax = function(url, options) {
+        'use strict';
+        options = options || {};
+        if (options.jsonp) {
+            return L.Util.ajax.jsonp(url, options);
+        }
+        var request;
+        var cancel;
+        var out = L.Util.Promise(function(resolve,reject){
+            var Ajax;
+            cancel=reject;
+            // the following is from JavaScript: The Definitive Guide
+            if (window.XMLHttpRequest === undefined) {
+                Ajax = function() {
+                    try {
+                        return new ActiveXObject('Microsoft.XMLHTTP.6.0');
+                    }
+                    catch (e1) {
+                        try {
+                            return new ActiveXObject('Microsoft.XMLHTTP.3.0');
+                        }
+                        catch (e2) {
+                            reject('XMLHttpRequest is not supported');
+                        }
+                    }
+                };
+            }
+            else {
+                Ajax = window.XMLHttpRequest;
+            }
+            var response;
+            request = new Ajax();
+            request.open(options.verb || 'GET', url);
+            request.onreadystatechange = function() {
+                /*jslint evil: true */
+                if (request.readyState === 4) {
+                    if((request.status < 400&&options.local)|| request.status===200) {
+                        if (window.JSON) {
+                            response = JSON.parse(request.responseText);
+                        } else if (options.evil) {
+                            response = eval('(' + request.responseText + ')');
+                        }
+                        resolve(response);
+                    } else {
+                        if(!request.status){
+                            reject('Attempted cross origin request without CORS enabled');
+                        }else{
+                            reject(request.statusText);
+                        }
+                    }
+                }
+            };
+            request.send(options.data || undefined);
+        });
+        out.then(null,function(reason){
+            request.abort();
+            return reason;
+        });
+        out.abort = cancel;
+        return out;
+    };
+    </script>
+    <script>
+
+    var map = L.map('map').setView([0, 0], 1);
+
+    log("<b>Terrain Service Demo Page</b>");
+    log("Visit <a href='https://github.com/geomatico/TerrainService' target='_blank'>https://github.com/geomatico/TerrainService</a>");
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>' +
+            ' | <a href="http://mapbox.com">Mapbox</a>',
         id: 'examples.map-i875mjb7'
     }).addTo(map);
+
+    log("<b>GET extent/</b>");
+    L.Util.ajax("extent/").then(function(data) {
+        log(JSON.stringify(data, null, 2));
+        var extent = L.geoJson(data, {
+            style: {
+                color: "#CC0000",
+                weight: 1,
+                opacity: 1
+            }
+        }).addTo(map);
+        map.fitBounds(extent.getBounds());
+    });
 
     var drawControl = new L.Control.Draw({
         draw: {
@@ -61,7 +140,12 @@
         } else if (type === 'polyline') {
             // Do polyline specific actions
             log("<b>POST layer/</b>");
-            log("TODO...");
+            L.Util.ajax("layer/", {
+                verb: 'POST',
+                data: JSON.stringify(layer.toGeoJSON())
+            }).then(function(data){
+                log(JSON.stringify(data, null, 2));
+            });
         }
 
         map.addLayer(layer);

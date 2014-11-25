@@ -88,6 +88,25 @@ var elevation = function(file) {
 
             inputDataset.close();
             outputDataset.close();
+        },
+        extent: function() {
+            function coords(col, row) {
+                return ({
+                    x: transform[0] + col * transform[1] + row * transform[2],
+                    y: transform[3] + col * transform[4] + row * transform[5]
+                });
+            }
+            var ring = new gdal.LinearRing();
+            ring.points.add([
+                coords(0, 0),
+                coords(size.x, 0),
+                coords(size.x, size.y),
+                coords(0, size.y),
+                coords(0, 0)
+            ]);
+            var polygon = new gdal.Polygon();
+            polygon.rings.add(ring);
+            return polygon;
         }
     };
 

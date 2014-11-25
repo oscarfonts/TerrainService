@@ -72,17 +72,22 @@ In case the elevation is not found (point out of DEM domain), a NaN will be retu
 
 The most general method will return a 3D file from a 2D file:
 
-    el.layer('../data/test/simple.geojson'); //  Second param not set => outputs to stdout
+    el.layer('../data/test/simple.geojson' /* second param not set, outputs to stdout */);
 
-As seen case input or output files are not set, the process will read from stdin and write to stdout, respectively.
+In case input or output files are not set, the process will read from stdin and write to stdout, respectively.
 
-A method to transform a particular GDAL geometry is also avaliable:
+To transform a particular gdal.Geometry:
 
     var gdal = require('gdal');
 
     var geom_2d = gdal.Geometry.fromWKT("POINT(2.194048 41.424580)");
     var geom_3d = el.geometry(geom_2d);
     console.log(geom_3d.toWKT());
+
+A helper method is available to get the DEM extent as a gdal.Polygon:
+
+    console.log(el.extent().toJSON());
+
 
 
 Running as a web service
@@ -99,6 +104,10 @@ And access it on port 8080. To get a point's height:
 To process a whole file, send it by POST. For example, using CURL:
 
     curl http://localhost:8080/layer -X POST -d @../data/test/simple.geojson
+
+To get the DEM extent:
+
+    http://localhost:8080/extent/
 
 To deploy the service permanently in a public [Ubuntu] server, create an "upstart" script called "/etc/init/terrain-service.conf" as root. Use the sample file at "doc/upstart_script_sample/terrain-service.conf", changing the paths as needed.
 
