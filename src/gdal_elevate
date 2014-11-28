@@ -47,6 +47,7 @@ var elevation = function(file) {
         },
         geometry: function(geometry) {
             // TODO support distinct MultiPolygon, MultiPoint and MultiLineString ?
+            geometry.segmentize(transform[1]);
             if (geometry.x) { // is a point
                 return elevate.point(geometry);
             } else if (geometry.points) { // is a linestring
