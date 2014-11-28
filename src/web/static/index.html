@@ -5,7 +5,6 @@
     <title>Terrain Service Demo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css" />
     <link rel="stylesheet" href="demo.css" />
@@ -26,71 +25,9 @@
     <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
     <script src="//calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+    <script src="leaflet.ajax.overrides.js"></script>
+    <script src="distance.js"></script>
     <script>
-    L.Util.ajax = function(url, options) {
-        'use strict';
-        options = options || {};
-        if (options.jsonp) {
-            return L.Util.ajax.jsonp(url, options);
-        }
-        var request;
-        var cancel;
-        var out = L.Util.Promise(function(resolve,reject){
-            var Ajax;
-            cancel=reject;
-            // the following is from JavaScript: The Definitive Guide
-            if (window.XMLHttpRequest === undefined) {
-                Ajax = function() {
-                    try {
-                        return new ActiveXObject('Microsoft.XMLHTTP.6.0');
-                    }
-                    catch (e1) {
-                        try {
-                            return new ActiveXObject('Microsoft.XMLHTTP.3.0');
-                        }
-                        catch (e2) {
-                            reject('XMLHttpRequest is not supported');
-                        }
-                    }
-                };
-            }
-            else {
-                Ajax = window.XMLHttpRequest;
-            }
-            var response;
-            request = new Ajax();
-            request.open(options.verb || 'GET', url);
-            request.onreadystatechange = function() {
-                /*jslint evil: true */
-                if (request.readyState === 4) {
-                    if((request.status < 400&&options.local)|| request.status===200) {
-                        if (window.JSON) {
-                            response = JSON.parse(request.responseText);
-                        } else if (options.evil) {
-                            response = eval('(' + request.responseText + ')');
-                        }
-                        resolve(response);
-                    } else {
-                        if(!request.status){
-                            reject('Attempted cross origin request without CORS enabled');
-                        }else{
-                            reject(request.statusText);
-                        }
-                    }
-                }
-            };
-            request.send(options.data || undefined);
-        });
-        out.then(null,function(reason){
-            request.abort();
-            return reason;
-        });
-        out.abort = cancel;
-        return out;
-    };
-    </script>
-    <script>
-
     var map = L.map('map').setView([0, 0], 1);
 
     log("<b>Terrain Service Demo Page</b>");
@@ -134,7 +71,7 @@
             // Do point specific actions
             var url = "point/" + layer._latlng.lng + "/" + layer._latlng.lat;
             log("<b>GET " + url + "</b>");
-            L.Util.ajax(url).then(function(data){
+            L.Util.ajax(url).then(function(data) {
                 log(JSON.stringify(data, null, 2));
             });
         } else if (type === 'polyline') {
@@ -143,13 +80,47 @@
             L.Util.ajax("layer/", {
                 verb: 'POST',
                 data: JSON.stringify(layer.toGeoJSON())
-            }).then(function(data){
-                log(JSON.stringify(data, null, 2));
+            }).then(function(data) {
+                var feature = data.features[0];
+                log(JSON.stringify(feature, null, 2));
+                chart(distances(feature.geometry));
             });
         }
 
         map.addLayer(layer);
     });
+
+    function distances(linestring) {
+        // Will construct an array of [distance, height] values
+        var distances = [];
+
+        // First data point: Distance 0 and height of first coordinate
+        var previous;
+        var actual = linestring.coordinates[0];
+        var m = 0;
+        var h = actual[2];
+        distances.push([m, h]);
+
+        // following data points: Accumulate distance point by point, read Z coordinate
+        for (var i = 1; i < linestring.coordinates.length; i++) {
+            previous = actual;
+            actual = linestring.coordinates[i];
+            var lon1 = previous[0], lat1 = previous[1];
+            var lon2 = actual[0], lat2 = actual[1];
+            m += distance(lon1, lat1, lon2, lat2); // Distance function is defined in external distance.js file
+            h = actual[2];
+            distances.push([m, h]);
+        }
+
+        log("<b>Calculated distances</b>");
+        log(JSON.stringify(distances, null, 2));
+
+        return distances;
+    }
+
+    function chart(data) {
+        log("<b>TODO: Draw chart</b>");
+    }
 
     function log(text) {
         var log = document.getElementById("log");
