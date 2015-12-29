@@ -26,7 +26,7 @@ Install latest node.js:
 Clone this repo:
 
     sudo apt-get install git
-    git clone git@github.com:geomatico/TerrainService.git
+    git clone git@github.com:oscarfonts/TerrainService.git
 
 Install its dependencies with npm:
 
@@ -121,15 +121,15 @@ Online demo
 
 A test server is running at:
 
-   http://northings.geomati.co:8080
+   http://demo.fonts.cat/TerrainService/
 
 For instance:
 
-   http://northings.geomati.co:8080/point/2.194048/41.424580
+   http://demo.fonts.cat/TerrainService/point/2.194048/41.424580
    
 Or try POSTing a file:
 
-    curl http://northings.geomati.co:8080/layer -X POST -d @../data/test/simple.geojson
+    curl http://demo.fonts.cat/TerrainService/layer -X POST -d @../data/test/simple.geojson
 
 
 Credits

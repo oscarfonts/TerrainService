@@ -25,7 +25,7 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.navigate.min.js'></script>
     <script src='//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js'></script>
-    <script src='//calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js'></script>
+    <script src='leaflet.ajax.js'></script>
     <script src='leaflet.ajax.overrides.js'></script>
     <script src='distance.js'></script>
     <script>
@@ -44,12 +44,11 @@
     var layer;
 
     log('<b>Terrain Service Demo Page</b>');
-    log('Visit <a href="https://github.com/geomatico/TerrainService" target="_blank">https://github.com/geomatico/TerrainService</a>');
+    log('Visit <a href="https://github.com/oscarfonts/TerrainService" target="_blank">https://github.com/oscarfonts/TerrainService</a>');
 
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://mapbox.com">Mapbox</a>',
-        id: 'examples.map-i875mjb7'
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
     log('<b>GET extent/</b>');
