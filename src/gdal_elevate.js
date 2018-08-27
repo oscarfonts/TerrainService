@@ -31,12 +31,13 @@ var elevation = function(file) {
             return new gdal.Point(point.x, point.y, elevate.z(point.x, point.y));
         },
         linestring: function(linestring) {
+            var out = new gdal.LineString();
             var points = linestring.points;
             var count = points.count();
             for (var i = 0; i < count; i++) {
-                points.set(i, elevate.point(points.get(i)));
+                out.points.add(elevate.point(points.get(i)));
             }
-            return linestring;
+            return out;
         },
         polygon: function(polygon) {
             var newPolygon = new gdal.Polygon();

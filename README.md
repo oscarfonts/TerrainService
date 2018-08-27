@@ -46,13 +46,13 @@ Running from command line
 
 Run the "gdal_elevate" script. Reads 2D input data (from a file or "stdin"), and outputs the 3D data (to a file or "stdout"). For example, try with the provided test files:
 
-    ./gdal_elevate ../data/DEM.tif ../data/test/simple.geojson
-    ./gdal_elevate ../data/DEM.tif ../data/test/barcelona.kml
+    ./gdal_elevate.js ../data/DEM.tif ../data/test/simple.geojson
+    ./gdal_elevate.js ../data/DEM.tif ../data/test/barcelona.kml
 
 
 For an usage message, run without parameters:
 
-    ./gdal_elevate
+    ./gdal_elevate.js
 
 
 Using it as a Node.js module
@@ -60,7 +60,7 @@ Using it as a Node.js module
 
 Just require the module and init with a DEM file:
 
-    var gdal_elevate = require(',/gdal_elevate');
+    var gdal_elevate = require('./gdal_elevate');
     var el = gdal_elevate('../data/DEM.tif');
 
 The simplest method will return a height value given a coordinate pair:
@@ -72,7 +72,7 @@ In case the elevation is not found (point out of DEM domain), a NaN will be retu
 
 The most general method will return a 3D file from a 2D file:
 
-    el.layer('../data/test/simple.geojson' /* second param not set, outputs to stdout */);
+    el.layer('test/data/simple.geojson' /* second param not set, outputs to stdout */);
 
 In case input or output files are not set, the process will read from stdin and write to stdout, respectively.
 
@@ -95,7 +95,7 @@ Running as a web service
 
 Just run:
 
-    web/server
+    web/server.js
 
 And access it on port 8080. To get a point's height:
 
