@@ -1,0 +1,9 @@
+version: '2'
+services:
+  terrainservice:
+    build: .
+    image: terrain-service
+    container_name: terrain-service
+    ports:
+      - 8080:8080
+    restart: always

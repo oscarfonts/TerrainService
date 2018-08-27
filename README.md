@@ -46,8 +46,8 @@ Running from command line
 
 Run the "gdal_elevate" script. Reads 2D input data (from a file or "stdin"), and outputs the 3D data (to a file or "stdout"). For example, try with the provided test files:
 
-    ./gdal_elevate.js ../data/DEM.tif ../data/test/simple.geojson
-    ./gdal_elevate.js ../data/DEM.tif ../data/test/barcelona.kml
+    ./gdal_elevate.js data/DEM.tif test/data/simple.geojson
+    ./gdal_elevate.js data/DEM.tif test/data/barcelona.kml
 
 
 For an usage message, run without parameters:
@@ -61,7 +61,7 @@ Using it as a Node.js module
 Just require the module and init with a DEM file:
 
     var gdal_elevate = require('./gdal_elevate');
-    var el = gdal_elevate('../data/DEM.tif');
+    var el = gdal_elevate('./data/DEM.tif');
 
 The simplest method will return a height value given a coordinate pair:
 
@@ -103,17 +103,14 @@ And access it on port 8080. To get a point's height:
 
 To process a whole file, send it by POST. For example, using CURL:
 
-    curl http://localhost:8080/layer -X POST -d @../data/test/simple.geojson
+    curl http://localhost:8080/layer -X POST -d @test/data/simple.geojson
 
 To get the DEM extent:
 
     http://localhost:8080/extent/
 
-To deploy the service permanently in a public [Ubuntu] server, create an "upstart" script called "/etc/init/terrain-service.conf" as root. Use the sample file at "doc/upstart_script_sample/terrain-service.conf", changing the paths as needed.
 
-Then run:
-
-    sudo service terrain-service [start|stop|restart]
+`Dockerfile` and `docker-compose.yaml` are available to run inside a container. 
 
 
 Online demo
@@ -129,7 +126,7 @@ For instance:
    
 Or try POSTing a file:
 
-    curl http://demo.fonts.cat/TerrainService/layer -X POST -d @../data/test/simple.geojson
+    curl http://demo.fonts.cat/TerrainService/layer -X POST -d @test/data/simple.geojson
 
 
 Credits

@@ -5,7 +5,7 @@
     "url": "http://github.com/geomatico/TerrainService",
     "main": "gdal_elevate.js",
     "scripts": {
-        "start": "web/server"
+        "start": "web/server.js"
     },
     "readmeFilename": "../README.md",
     "dependencies": {
